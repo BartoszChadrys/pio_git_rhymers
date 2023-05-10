@@ -23,6 +23,7 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
             super.countIn(in);
     }
 
+    // TODO: this method looks unnecessary, because we have already reportRejected(), which does the same
     public int getTotalRejected() {
         return totalRejected;
     }

@@ -1,5 +1,6 @@
 package edu.kis.vh.nursery.list;
 
+// TODO: "i" is unnecessary in this class as well as it's getter "getI"
 public class IntLinkedList {
 
     private static final int RETURN_VALUE = -1;
