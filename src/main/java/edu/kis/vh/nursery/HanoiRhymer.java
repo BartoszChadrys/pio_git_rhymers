@@ -1,17 +1,30 @@
 package edu.kis.vh.nursery;
 
-public class HanoiRhymer extends defaultCountingOutRhymer {
+/**
+ * A class that extends DefaultCountingOutRhymer to collect rejections
+ * Contains int that keeps sum of rejections
+ * Possible methods except extended class:
+ * reportRejected/getTotalRejected - returns sum of rejections
+ */
 
-int totalRejected = 0;
+public class HanoiRhymer extends DefaultCountingOutRhymer {
+
+    private int totalRejected = 0;
 
     public int reportRejected() {
         return totalRejected;
     }
 
+    @Override
     public void countIn(int in) {
-    if (!callCheck() && in > peekaboo())
+        if (!callCheck() && in > peekaboo())
             totalRejected++;
-            else
-                super.countIn(in);
+        else
+            super.countIn(in);
+    }
+
+    // TODO: this method looks unnecessary, because we have already reportRejected(), which does the same
+    public int getTotalRejected() {
+        return totalRejected;
     }
 }
